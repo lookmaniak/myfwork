@@ -3,6 +3,9 @@
 
 This is a minimalistic PHP MVC framework designed for learning the core concepts of MVC architecture (Model-View-Controller).
 
+## Demo
+[Live Demo] (http://lookmaniak.atwebpages.com)
+
 ## Features
 This framework has some basic features:
 - **Routing**: Handles HTTP requests and maps them to controller actions.
