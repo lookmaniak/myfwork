@@ -9,14 +9,14 @@ class Layout extends View {
             tag('head', [
                 tag('title', $title),
                 tag('meta[name="viewport"][content="width=device-width, initial-scale=1"]'),
-                tag('link[rel="stylesheet"][href="/myfw/assets/css/bootstrap.min.css"]'),
-                tag('link[rel="stylesheet"][href="/myfw/assets/css/style.css"]'),
-                tag('script[src="/myfw/assets/js/bootstrap.bundle.js"]')
+                tag('link[rel="stylesheet"][href="'.path('assets/css/bootstrap.min.css').'"]'),
+                tag('link[rel="stylesheet"][href="'.path('assets/css/style.css').'"]'),
+                tag('script[src="'.path('assets/js/bootstrap.bundle.js').'"]')
             ]),
             tag('body',[
                 tag('nav.navbar.navbar-expand.navbar-light.bg-light', [
                     tag('div.container-fluid', [
-                        tag('a.navbar-brand[href="#"]', 'MyFW'),
+                        tag('a.navbar-brand[href="#"]', 'MyFWork'),
                         tag('button.navbar-toggler[type="button"][data-bs-toggle="collapse"][data-bs-target="#navbarNav"][aria-controls="navbarNav"][aria-expanded="false"][aria-label="Toggle navigation"]', tag('span.navbar-toggler-icon')),
                     ])
                 ]),
