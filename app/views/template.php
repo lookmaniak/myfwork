@@ -9,9 +9,9 @@ class Layout extends View {
             tag('head', [
                 tag('title', $title),
                 tag('meta[name="viewport"][content="width=device-width, initial-scale=1"]'),
-                tag('link[rel="stylesheet"][href="'.path('assets/css/bootstrap.min.css').'"]'),
-                tag('link[rel="stylesheet"][href="'.path('assets/css/style.css').'"]'),
-                tag('script[src="'.path('assets/js/bootstrap.bundle.js').'"]')
+                tag('link[rel="stylesheet"][href="'.assets('css/bootstrap.min.css').'"]'),
+                tag('link[rel="stylesheet"][href="'.assets('css/style.css').'"]'),
+                tag('script[src="'.assets('js/bootstrap.bundle.min.js').'"]')
             ]),
             tag('body',[
                 tag('nav.navbar.navbar-expand.navbar-light.bg-light', [

@@ -15,6 +15,12 @@ function path($target) {
     return APP_URL.$path;
 }
 
+function assets($target) {
+    $path = str_replace('//', '/', "/assets/$target");
+
+    return APP_URL.$path;
+}
+
 function print_log($message) {
     echo json_encode($message) . '<br>';
 }
