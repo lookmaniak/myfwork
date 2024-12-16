@@ -1,3 +1,3 @@
 .*
 !.gitignore
-/app/configs/app.php
+app/configs/app.php
