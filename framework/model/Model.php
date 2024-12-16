@@ -48,23 +48,11 @@ class Model {
             $stmt->bindValue(":$key", $value);
         }
 
-        $result = $stmt->execute();
-
-        if(!$result) {
+        if(!$stmt->execute()) {
             print_log($stmt->errorInfo()[2]);
-            return null;
+            return false;
         }
-
-        $lastInsertId = $pdo->lastInsertId();
-
-        $stmt = $pdo->prepare("SELECT * FROM $base_table WHERE id = :id");
-        $stmt->bindValue(':id', $lastInsertId);
-
-        $recentRecord = $stmt->fetch(PDO::FETCH_ASSOC);
-        
-
-        return $recentRecord;
-
+        return true;
     }
 
     static function find($param) {
@@ -83,18 +71,6 @@ class Model {
         return $recentRecord;
     }
 
-    /**
-     * Updates the specified parameter with a new value.
-     *
-     * This function takes the current value of a parameter and updates it with a new value.
-     * It can be used to modify configuration settings, database entries, or any other context
-     * where an update operation is required.
-     *
-     * @param array $param The pair of key and value for the data to be updated.
-     * @param array $new_value The new value that will replace the current value in key value pairs.
-     * 
-     * @return bool Returns `true` if the update was successful, or `false` if there was an error.
-     */
     static function update($param, $new_value) {
         $pdo = ConnectionPool::instance()->getConnection();
         $base_table = self::get_base_table();
@@ -123,10 +99,6 @@ class Model {
 
         if(!$stmt->execute()) {
             print_log($stmt->errorInfo()[2]);
-            print_log($columns);
-            print_log($params);
-            print_log($param_keys);
-            print_log($value_keys);
             return false;
         }
         return true;

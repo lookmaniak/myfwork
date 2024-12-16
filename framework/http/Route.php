@@ -18,7 +18,7 @@ class Route {
     }
 
     public static function listen() {
-        $path_info = strtolower(ltrim($_SERVER['PATH_INFO'], '/'));
+        $path_info = strtolower(ltrim(isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '', '/'));
         $request_method = strtolower($_SERVER['REQUEST_METHOD']);
     
         $route_found = self::$route_collection["$request_method:$path_info"] ?? null;
